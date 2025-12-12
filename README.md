@@ -34,3 +34,15 @@ This project demonstrates reproducible computational biology practices useful fo
 ---
 
 ## 📁 Workflow Overview (Snakemake)
+```
+TBInteract/
+├── data/
+│   ├── raw/ (AlphaFold models)
+│   └── processed/
+├── database/ (SQLite DB)
+├── dynamics/ (diffusion model)
+├── structure/ (contact + quasi-docking)
+├── results/
+├── Snakefile
+└── requirements.txt
+```
