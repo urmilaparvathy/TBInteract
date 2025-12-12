@@ -61,14 +61,13 @@ cd TBInteract
 python3.10 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+
 2️. Place AlphaFold PDBs
-bash
-Copy code
+```bash
 data/raw/alphafold_dprE1.pdb
 data/raw/alphafold_dprE2.pdb
 3️. Run pipeline
-bash
-Copy code
+```bash
 snakemake -j 1
 4️. Key outputs
 results/diffusion_simulation.csv
@@ -78,12 +77,14 @@ results/contact_scores.csv
 results/oriented_contact_scores.csv
 
  Example Results
+
 Protein	Score (Diffusion)	Interface Fraction (Raw)	Best Interface Fraction (Oriented)
 embA	1.00	0.024	↑ improved after rotation
 dprE1	0.28	0.024	↑ improved
 dprE2	0.01	0.024	↑ improved
 
  Biological Relevance
+
 DprE1 is an essential enzyme involved in cell-wall arabinan synthesis.
 This workflow helps explore:
 
