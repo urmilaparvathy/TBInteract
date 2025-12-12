@@ -46,3 +46,29 @@ TBInteract/
 ├── Snakefile
 └── requirements.txt
 ```
+## 🧪 Quick Start
+
+### 1️⃣ Clone and install
+```
+git clone https://github.com/urmilaparvathy/TBInteract
+cd TBInteract
+python3.10 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### 2️⃣ Place AlphaFold PDBs
+```
+data/raw/alphafold_dprE1.pdb
+data/raw/alphafold_dprE2.pdb
+```
+
+### 3️⃣ Run pipeline
+```
+snakemake -j 1
+```
+
+### 4️⃣ Key outputs
+- `results/diffusion_simulation.csv`
+- `results/contact_scores.csv`
+- `results/oriented_contact_scores.csv`
