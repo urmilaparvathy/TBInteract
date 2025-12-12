@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
+![Snakemake](https://img.shields.io/badge/Snakemake-Workflow-green.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Build](https://img.shields.io/badge/Build-Passing-brightgreen.svg)
+
 #  TBInteract  
 *A reproducible network + structural modeling pipeline for Mycobacterium tuberculosis protein interactions*
 
