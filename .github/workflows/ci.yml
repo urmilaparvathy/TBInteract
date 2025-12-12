@@ -11,7 +11,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Install system dependencies
         run: |
           sudo apt-get update -y
@@ -21,7 +20,6 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
-
       - name: Upgrade pip and install critical Python packages (pulp pinned)
         run: |
           python -m pip install --upgrade pip
@@ -30,23 +28,8 @@ jobs:
       - name: Create placeholder AlphaFold PDBs for CI
         run: |
           mkdir -p data/raw
-          cat > data/raw/alphafold_dprE1.pdb <<'PDB'
-HEADER    PLACEHOLDER PDB FOR dprE1
-ATOM      1  N   MET A   1      11.104  13.207   2.100  1.00 20.00           N
-ATOM      2  CA  MET A   1      12.560  13.407   2.200  1.00 20.00           C
-ATOM      3  C   MET A   1      13.000  14.850   2.100  1.00 20.00           C
-TER
-END
-PDB
-          cat > data/raw/alphafold_dprE2.pdb <<'PDB'
-HEADER    PLACEHOLDER PDB FOR dprE2
-ATOM      1  N   ALA A   1      21.104  23.207   5.100  1.00 20.00           N
-ATOM      2  CA  ALA A   1      22.560  23.407   5.200  1.00 20.00           C
-ATOM      3  C   ALA A   1      23.000  24.850   5.100  1.00 20.00           C
-TER
-END
-PDB
-
+          echo "HEADER PLACEHOLDER" > data/raw/alphafold_dprE1.pdb
+          echo "HEADER PLACEHOLDER" > data/raw/alphafold_dprE2.pdb
       - name: Install project requirements (best-effort)
         run: |
           if [ -f requirements.txt ]; then
@@ -62,3 +45,4 @@ PDB
       - name: Lint Snakemake (non-failing)
         run: |
           snakemake --lint || true
+
