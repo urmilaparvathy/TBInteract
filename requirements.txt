@@ -1,0 +1,12 @@
+snakemake
+biopython
+networkx
+numpy
+pandas
+matplotlib
+flask
+mdanalysis
+sqalchemy
+requests
+python-igraph
+lxml
