@@ -1,4 +1,4 @@
-# 🧬 TBInteract  
+#  TBInteract  
 *A reproducible network + structural modeling pipeline for Mycobacterium tuberculosis protein interactions*
 
 TBInteract is a research-grade computational pipeline that integrates:
@@ -14,7 +14,7 @@ This project demonstrates reproducible computational biology practices useful fo
 
 ---
 
-## 🚀 Features
+##  Features
 
 ### **1. Network dynamics**
 - Loads STRING network into SQLite  
@@ -33,7 +33,7 @@ This project demonstrates reproducible computational biology practices useful fo
 
 ---
 
-## 📁 Workflow Overview (Snakemake)
+##  Workflow Overview (Snakemake)
 ```
 TBInteract/
 ├── data/
@@ -46,7 +46,7 @@ TBInteract/
 ├── Snakefile
 └── requirements.txt
 ```
-## 🧪 Quick Start
+##  Quick Start
 
 ### 1️⃣ Clone and install
 ```
@@ -72,10 +72,32 @@ snakemake -j 1
 - `results/diffusion_simulation.csv`
 - `results/contact_scores.csv`
 - `results/oriented_contact_scores.csv`
-## 📊 Example Results
+##  Example Results
 
 | Protein | Diffusion Score | Raw Interface Fraction | Oriented Interface Fraction |
 |--------|------------------|-------------------------|-----------------------------|
 | embA   | 1.00             | 0.024                   | ↑ improved after rotation   |
 | dprE1  | 0.28             | 0.024                   | ↑ improved                  |
 | dprE2  | 0.01             | 0.024                   | ↑ improved                  |
+##  Biological Relevance
+
+DprE1 is an essential enzyme in arabinan biosynthesis in *M. tuberculosis*.  
+These analyses help explore:
+
+- Downstream network effects of perturbing DprE1  
+- Potential DprE1/DprE2 structural complementarity  
+- Interaction partners of therapeutic interest  
+- Hypotheses for drug mechanism exploration  
+
+---
+
+##  Author
+
+**Urmila Parvathy**  
+Bioinformatics & Computational Genomics  
+GitHub: https://github.com/urmilaparvathy  
+
+---
+
+##  License
+MIT License (see LICENSE file)
