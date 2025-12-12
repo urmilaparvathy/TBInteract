@@ -72,3 +72,10 @@ snakemake -j 1
 - `results/diffusion_simulation.csv`
 - `results/contact_scores.csv`
 - `results/oriented_contact_scores.csv`
+## 📊 Example Results
+
+| Protein | Diffusion Score | Raw Interface Fraction | Oriented Interface Fraction |
+|--------|------------------|-------------------------|-----------------------------|
+| embA   | 1.00             | 0.024                   | ↑ improved after rotation   |
+| dprE1  | 0.28             | 0.024                   | ↑ improved                  |
+| dprE2  | 0.01             | 0.024                   | ↑ improved                  |
