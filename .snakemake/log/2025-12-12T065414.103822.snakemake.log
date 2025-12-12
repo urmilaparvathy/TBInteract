@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule structure_contacts in file /home/urmila/projects/TBInteract/Snakefile, line 20:
+Missing input files for rule structure_contacts:
+    output: results/contact_scores.csv
+    affected files:
+        data/raw/alphafold_dprE2.pdb
+        data/raw/alphafold_dprE1.pdb

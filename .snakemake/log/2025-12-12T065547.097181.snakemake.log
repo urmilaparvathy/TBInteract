@@ -1,0 +1,63 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+all                       1
+build_db                  1
+diffusion                 1
+structure_contacts        1
+total                     4
+
+Select jobs to execute...
+
+[Fri Dec 12 06:55:47 2025]
+rule build_db:
+    input: data/processed/string_edges.csv
+    output: database/tb_protein_network.db
+    jobid: 1
+    reason: Missing output files: database/tb_protein_network.db
+    resources: tmpdir=/tmp
+
+[Fri Dec 12 06:55:50 2025]
+Finished job 1.
+1 of 4 steps (25%) done
+Select jobs to execute...
+
+[Fri Dec 12 06:55:50 2025]
+rule diffusion:
+    input: database/tb_protein_network.db
+    output: results/diffusion_simulation.csv
+    jobid: 2
+    reason: Missing output files: results/diffusion_simulation.csv; Input files updated by another job: database/tb_protein_network.db
+    resources: tmpdir=/tmp
+
+[Fri Dec 12 06:55:52 2025]
+Finished job 2.
+2 of 4 steps (50%) done
+Select jobs to execute...
+
+[Fri Dec 12 06:55:52 2025]
+rule structure_contacts:
+    input: data/raw/alphafold_dprE1.pdb, data/raw/alphafold_dprE2.pdb
+    output: results/contact_scores.csv
+    jobid: 3
+    reason: Missing output files: results/contact_scores.csv
+    resources: tmpdir=/tmp
+
+[Fri Dec 12 06:55:53 2025]
+Error in rule structure_contacts:
+    jobid: 3
+    input: data/raw/alphafold_dprE1.pdb, data/raw/alphafold_dprE2.pdb
+    output: results/contact_scores.csv
+
+RuleException:
+CalledProcessError in file /home/urmila/projects/TBInteract/Snakefile, line 26:
+Command 'set -euo pipefail;  /home/urmila/projects/TBInteract/venv/bin/python3.10 /home/urmila/projects/TBInteract/.snakemake/scripts/tmpufl6s2h4.contact_map.py' returned non-zero exit status 1.
+  File "/home/urmila/projects/TBInteract/Snakefile", line 26, in __rule_structure_contacts
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-12-12T065547.097181.snakemake.log

@@ -1,0 +1,5 @@
+protein1,protein2,combined_score
+dprE1,dprE2,900
+dprE1,fadD32,800
+dprE2,fadD32,650
+dprE1,embA,400

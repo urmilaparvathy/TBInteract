@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+results/
+database/*.db
+data/raw/
+data/alpha_models/
+.ipynb_checkpoints/
+.env
